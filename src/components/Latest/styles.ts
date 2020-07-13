@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   flex: 1;
-  background-color: #e5e6f0;
   grid-area: 'latest';
+  background-color: #e5e6f0;
 
   padding: 25px;
   border-radius: 32px;
@@ -18,7 +18,9 @@ export const SectionTitle = styled.h1`
 export const TransactionContainer = styled.div`
   display: flex;
   flex-direction: row;
+  
   background-color: #fff;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
 
   justify-content: space-between;
   align-items: center;
@@ -74,5 +76,6 @@ export const TransactionValue = styled.h1`
   font-weight: bold;
   color: #7FCD91;
 
+  margin-left: 5px;
   margin-right: 12px;
 `;
