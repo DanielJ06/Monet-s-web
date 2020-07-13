@@ -62,6 +62,7 @@ export const WalletButton = styled.button`
   background-color: #2968e9;
   border-radius: 28px;
   border: none;
+  transition: background-color 1s ease;
 
   :hover {
     background-color: #31559E;

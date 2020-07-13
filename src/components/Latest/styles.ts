@@ -18,9 +18,6 @@ export const SectionTitle = styled.h1`
 export const TransactionContainer = styled.div`
   display: flex;
   flex-direction: row;
-  
-  background-color: #fff;
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
 
   justify-content: space-between;
   align-items: center;
@@ -29,6 +26,14 @@ export const TransactionContainer = styled.div`
   margin: 12px 0;
 
   border-radius: 21px;
+  
+  background-color: #fff;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+  transition: box-shadow 1s ease;  
+
+  :hover {
+    box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const BoxContainer = styled.div`
@@ -41,16 +46,22 @@ export const BoxContainer = styled.div`
 `;
 
 export const Type = styled.div`
-  background-color: #7FCD91;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #7FCD91;
 
   width: 50px;
   height: 50px;
 
   border-radius: 12px;
+
+  transition: background-color 1s ease;
+
+  :hover {
+    background-color: #42b95e;
+  }
 `;
 
 export const TypeIcon = styled.h1``;
