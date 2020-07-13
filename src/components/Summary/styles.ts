@@ -17,11 +17,28 @@ export const SectionTitle = styled.h1`
 
 export const ContentContainer = styled.div``;
 
-export const BtnArea = styled.div``;
+export const BtnArea = styled.div`
+  padding: 12px;
+`;
 
-export const BtnContainer = styled.button``;
+export const BtnContainer = styled.button`
+  padding: 12px;
+  margin: 0 5px;
+  
+  border-radius: 15px;
+  border: none;
 
-export const BtnText = styled.p``;
+  background-color: #2968e9;
+
+  :active {
+    background-color: #31559E;
+  }
+`;
+
+export const BtnText = styled.p`
+  font-weight: bold;
+  color: #fff;
+`;
 
 export const DataContainer = styled.div``;
 

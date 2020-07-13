@@ -4,6 +4,8 @@ import { MdAttachMoney, MdEvent, MdDeleteForever } from 'react-icons/md';
 
 import { 
   Container,
+  Header,
+  SeeMore,
   SectionTitle,
   TransactionContainer,
   BoxContainer,
@@ -18,7 +20,10 @@ import {
 const Latest: React.FC = () => {
   return (
     <Container>
-      <SectionTitle>Latest</SectionTitle>
+      <Header>
+        <SectionTitle>Latest</SectionTitle>
+        <SeeMore>See more</SeeMore>
+      </Header>
       <TransactionContainer>
         <BoxContainer>
           <Type>

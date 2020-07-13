@@ -9,6 +9,19 @@ export const Container = styled.div`
   border-radius: 32px;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SeeMore = styled.h3`
+  font-weight: bold;
+  text-decoration: underline;
+`;
+
 export const SectionTitle = styled.h1`
   color: #4D4646;
   font-weight: bold;
