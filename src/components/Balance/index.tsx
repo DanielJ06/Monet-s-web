@@ -21,7 +21,7 @@ const Balance: React.FC = () => {
       <ContentContainer>
         <TotalBox>
           <MoneyType>R$</MoneyType>
-          <TotalValue>800,00</TotalValue>
+          <TotalValue>{(17500).toLocaleString('pt-BR')}</TotalValue>
         </TotalBox>
         <WalletBox>
           <WalletButton>

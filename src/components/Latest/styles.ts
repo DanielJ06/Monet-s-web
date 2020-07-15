@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type colorType = {
+  transactionType: string
+}
+
 export const Container = styled.div`
   flex: 1;
   grid-area: 'latest';
@@ -58,12 +62,13 @@ export const BoxContainer = styled.div`
 
 `;
 
-export const Type = styled.div`
+
+export const Type = styled.div<colorType>`
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: #7FCD91;
+  background-color: ${props => props.transactionType === 'deposit' ? '#7FCD91' : '#AF5353'};
 
   width: 50px;
   height: 50px;
@@ -73,7 +78,7 @@ export const Type = styled.div`
   transition: background-color 1s ease;
 
   :hover {
-    background-color: #42b95e;
+    background-color: ${props => props.transactionType === 'deposit' ? '#42b95e' : '#961919'};
   }
 `;
 
@@ -87,18 +92,19 @@ export const Title = styled.h3`
   font-weight: bold;
 `;
 
-export const Date = styled.p`
+export const TransactionDate = styled.p`
   font-weight: bold;
+  margin-left: 3px;
 `;
 
-export const MoneyType = styled.p`
+export const MoneyType = styled.p<colorType>`
   font-weight: bold;
-  color: #7FCD91;
+  color: ${props => props.transactionType === 'deposit' ? '#7FCD91' : '#AF5353'};
 `;
 
-export const TransactionValue = styled.h1`
+export const TransactionValue = styled.h1<colorType>`
   font-weight: bold;
-  color: #7FCD91;
+  color: ${props => props.transactionType === 'deposit' ? '#7FCD91' : '#AF5353'};
 
   margin-left: 5px;
   margin-right: 12px;
