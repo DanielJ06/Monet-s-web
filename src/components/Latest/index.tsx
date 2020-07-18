@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { MdAttachMoney, MdMoneyOff, MdEvent, MdDeleteForever } from 'react-icons/md';
+import { MdAttachMoney, MdMoneyOff, MdEvent } from 'react-icons/md';
 import {parseISO, formatRelative} from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
 
@@ -71,10 +71,11 @@ const Latest: React.FC = () => {
           </BoxContainer>
           <BoxContainer>
             <MoneyType transactionType={transaction.type}>R$</MoneyType>
-            <TransactionValue transactionType={transaction.type}>{(transaction.value).toLocaleString('pt-BR')}</TransactionValue>
-            <button style={{ border: 'none' }} >
-              <MdDeleteForever size={32} color="#4D4646" />
-            </button>
+            <TransactionValue 
+              transactionType={transaction.type}
+            >
+              {(transaction.value).toLocaleString('pt-BR')}
+            </TransactionValue>
           </BoxContainer>
         </TransactionContainer>
       ))}
