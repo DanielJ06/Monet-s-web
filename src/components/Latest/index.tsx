@@ -67,7 +67,7 @@ const Latest: React.FC = () => {
               {transaction.type === 'deposit' ? (
                 <MdAttachMoney size={48} color="#fff" style={{ marginLeft: 3 }} />
               ) : (
-                <MdMoneyOff size={48} color="#fff" style={{ marginLeft: 3 }} />
+                <MdMoneyOff size={48} color="#fff" />
               )}
             </Type>
             <InfoContainer>
