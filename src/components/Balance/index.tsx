@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { MdAccountBalanceWallet } from 'react-icons/md';
+
+import { WalletContext } from '../../context/WalletContext';
 
 import { 
   Container, 
@@ -15,19 +17,21 @@ import {
 } from './styles';
 
 const Balance: React.FC = () => {
+  const { wallet } = useContext(WalletContext);
+  
   return (
     <Container>
       <SectionTitle>My Balance</SectionTitle>
       <ContentContainer>
         <TotalBox>
           <MoneyType>R$</MoneyType>
-          <TotalValue>{(17500).toLocaleString('pt-BR')}</TotalValue>
+          <TotalValue>{wallet.total}</TotalValue>
         </TotalBox>
         <WalletBox>
           <WalletButton>
             <MdAccountBalanceWallet style={{ marginRight: 10 }} size={55} color="#fff" />
             <div>
-              <BtnText>Personal</BtnText>
+              <BtnText>{wallet.title}</BtnText>
               <BtnText>Wallet</BtnText>
             </div>
           </WalletButton>
