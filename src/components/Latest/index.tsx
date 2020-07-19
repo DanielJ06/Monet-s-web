@@ -83,7 +83,7 @@ const Latest: React.FC = () => {
             <TransactionValue 
               transactionType={transaction.type}
             >
-              {(transaction.value).toLocaleString('pt-BR')}
+              {transaction.value}
             </TransactionValue>
           </BoxContainer>
         </TransactionContainer>
