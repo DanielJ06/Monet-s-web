@@ -31,7 +31,7 @@ const Balance: React.FC = () => {
           <WalletButton>
             <MdAccountBalanceWallet style={{ marginRight: 10 }} size={55} color="#fff" />
             <div>
-              <BtnText>{wallet.title}</BtnText>
+              <BtnText>{(wallet.title)}</BtnText>
               <BtnText>Wallet</BtnText>
             </div>
           </WalletButton>
