@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import { MdAttachMoney, MdMoneyOff, MdEvent } from 'react-icons/md';
 import {parseISO, formatRelative} from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
+
+import { AuthContext } from '../../context/AuthContext';
+import { WalletContext } from '../../context/WalletContext';
 
 import api from '../../services/api';
 
@@ -30,15 +33,20 @@ interface Transaction {
 }
 
 const Latest: React.FC = () => {
+  const { token } = useContext(AuthContext);
+  const { wallet } = useContext(WalletContext);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
     async function loadLatestTransactions() {
-      const transactions = await api.get('/transaction/latest?walletId=1')
+      const config = {
+        headers: { Authorization: `Bearer ${token}` }
+      };
+      const transactions = await api.get(`/transaction/latest?walletId=${wallet.id}`, config)
       setTransactions(transactions.data);
     }
     loadLatestTransactions();
-  }, []);
+  }, [token, wallet.id]);
 
   function dateParsed(date: string) {
     return formatRelative(parseISO(date), new Date(), {
