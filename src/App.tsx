@@ -1,19 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import GlobalStyle from './styles/global';
-//import Dashboard from './pages/Dashboard';
-import SignIn from './pages/SignIn';
 
 import { AuthProvider } from './context/AuthContext';
 
+import Routes from './routes/index';
+
 function App() {
   return (
-    <React.Fragment>
+    <Router>
       <AuthProvider>
-        <SignIn />
+          <Routes />
       </AuthProvider>
       <GlobalStyle />
-    </React.Fragment>
+    </Router>
   );
 }
 

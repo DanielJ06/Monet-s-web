@@ -22,10 +22,11 @@ import {
 } from './styles';
 
 interface Transaction {
-  title: string,
-  value: number,
-  type: string,
-  createdAt: string,
+  id: number;
+  title: string;
+  value: number;
+  type: string;
+  createdAt: string;
 }
 
 const Latest: React.FC = () => {
@@ -52,7 +53,7 @@ const Latest: React.FC = () => {
         <SeeMore>See more</SeeMore>
       </Header>
       {transactions.map(transaction => (
-        <TransactionContainer>
+        <TransactionContainer key={transaction.id} >
           <BoxContainer>
             <Type transactionType={transaction.type}>
               {transaction.type === 'deposit' ? (
