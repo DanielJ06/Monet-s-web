@@ -17,6 +17,7 @@ interface AuthContextData {
   user: User;
   token: string;
   signIn(credentials: Credentials): Promise<void>;
+  logout(): void;
 }
 
 interface AuthData {
@@ -52,8 +53,15 @@ export const AuthProvider: React.FC = ({ children }) => {
     setData({ token, user });
   }, [])
 
+  const logout = useCallback(() => {
+    localStorage.removeItem('@Monets:token');
+    localStorage.removeItem('@Monets:user');
+
+    setData({} as AuthData);
+  }, [])
+
   return (
-    <AuthContext.Provider value={{ user: data.user, token: data.token, signIn }}>
+    <AuthContext.Provider value={{ user: data.user, token: data.token, signIn, logout }}>
       {children}
     </AuthContext.Provider>
   );

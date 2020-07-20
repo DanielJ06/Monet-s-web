@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 const Account: React.FC = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   return (
     <Container>
@@ -24,7 +24,7 @@ const Account: React.FC = () => {
           <h3>{user.name}</h3>
           <MdEdit size={21} />
         </AvatarArea>
-        <button style={{ border: 'none', backgroundColor: 'transparent' }} >
+        <button onClick={logout} style={{ border: 'none', backgroundColor: 'transparent' }} >
           <MdExitToApp size={45} />
         </button>
       </Content>
