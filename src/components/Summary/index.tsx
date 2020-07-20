@@ -50,10 +50,20 @@ const Summary: React.FC = () => {
       <SectionTitle>Summary</SectionTitle>
       <ContentContainer>
         <BtnArea>
-          <BtnContainer onClick={() => handleChangeFilter('year')} >
+          <BtnContainer 
+            style={{ 
+              background: filter === 'year' ? '#2968e9' : '#31559E' 
+            }}
+            onClick={() => handleChangeFilter('year')} 
+          >
             <BtnText>Year</BtnText>
           </BtnContainer>
-          <BtnContainer onClick={() => handleChangeFilter('month')} >
+          <BtnContainer 
+            style={{ 
+              background: filter === 'month' ? '#2968e9' : '#31559E' 
+            }} 
+            onClick={() => handleChangeFilter('month')}
+          >
             <BtnText>Month</BtnText>
           </BtnContainer>
         </BtnArea>

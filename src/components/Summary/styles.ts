@@ -27,12 +27,6 @@ export const BtnContainer = styled.button`
   
   border-radius: 15px;
   border: none;
-
-  background-color: #2968e9;
-
-  :active {
-    background-color: #31559E;
-  }
 `;
 
 export const BtnText = styled.p`
