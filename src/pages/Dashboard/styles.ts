@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromBottom = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50px)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+`;
 
 export const Container = styled.div`
   display: grid;
@@ -8,4 +19,6 @@ export const Container = styled.div`
   grid-gap: 21px;
 
   padding: 32px;
+
+  animation: ${appearFromBottom} 2s;
 `;
