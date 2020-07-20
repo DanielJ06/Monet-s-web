@@ -22,10 +22,10 @@ const Account: React.FC = () => {
             alt="avatar"
           />
           <h3>{user.name}</h3>
-          <MdEdit size={21} />
+          <MdEdit size={21} color="#4D4646" />
         </AvatarArea>
         <button onClick={logout} style={{ border: 'none', backgroundColor: 'transparent' }} >
-          <MdExitToApp size={45} />
+          <MdExitToApp size={45} color="#4D4646" />
         </button>
       </Content>
     </Container>
