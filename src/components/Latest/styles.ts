@@ -6,7 +6,7 @@ type colorType = {
 
 export const Container = styled.div`
   flex: 1;
-  grid-area: 'latest';
+  grid-area: latest;
   background-color: #e5e6f0;
 
   padding: 25px;

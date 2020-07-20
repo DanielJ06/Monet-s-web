@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   flex: 1;
-  grid-area: 'summary';
+  grid-area: summary;
   background-color: #e5e6f0;
 
   padding: 25px;

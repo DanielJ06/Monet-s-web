@@ -10,10 +10,10 @@ import { Container } from './styles';
 const Dashboard: React.FC = () => {
   return (
     <Container>
-        <Summary />
-        <Balance />
-        <Latest />
-        <Account />
+      <Account />
+      <Balance />
+      <Summary />
+      <Latest />
     </Container>
   );
 }

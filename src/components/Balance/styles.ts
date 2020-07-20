@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   flex: 1;
-  grid-area: 'balance';
+  grid-area: balance;
   background-color: #e5e6f0;
 
   padding: 25px;
@@ -47,8 +47,6 @@ export const TotalValue = styled.h1`
     cursor: pointer;
   }
 `;
-
-export const WalletBox = styled.div``;
 
 export const WalletButton = styled.button`
   display: flex;

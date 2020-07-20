@@ -11,7 +11,6 @@ import {
   TotalBox,
   MoneyType,
   TotalValue,
-  WalletBox,
   WalletButton,
   BtnText,
 } from './styles';
@@ -27,15 +26,13 @@ const Balance: React.FC = () => {
           <MoneyType>R$</MoneyType>
           <TotalValue>{wallet.total}</TotalValue>
         </TotalBox>
-        <WalletBox>
-          <WalletButton>
-            <MdAccountBalanceWallet style={{ marginRight: 10 }} size={55} color="#fff" />
-            <div>
-              <BtnText>{(wallet.title)}</BtnText>
-              <BtnText>Wallet</BtnText>
-            </div>
-          </WalletButton>
-        </WalletBox>
+        <WalletButton>
+          <MdAccountBalanceWallet style={{ marginRight: 10 }} size={55} color="#fff" />
+          <div>
+            <BtnText>{(wallet.title)}</BtnText>
+            <BtnText>Wallet</BtnText>
+          </div>
+        </WalletButton>
       </ContentContainer>
     </Container>
   );
