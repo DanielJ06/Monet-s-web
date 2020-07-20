@@ -5,6 +5,8 @@ export const Container = styled.div`
   grid-area: account;
   background-color: #e5e6f0;
 
+  align-items: center;
+
   padding: 32px;
   border-radius: 32px;
 `;
@@ -14,19 +16,25 @@ export const Content = styled.div`
   flex-direction: row;
 
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+`;
+
+export const AvatarArea = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
 
   h3 {
     font-weight: bold;
     font-size: 32px;
-
-    margin-top: 18px;
+    margin: 0 12px;
   }
   
   img {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 69px;
+    height: 69px;
   }
 `;
-

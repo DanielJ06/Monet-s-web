@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 
+import { MdExitToApp, MdEdit } from 'react-icons/md';
+
 import { AuthContext } from '../../context/AuthContext';
 
 import {
   Container,
   Content,
+  AvatarArea,
 } from './styles';
 
 const Account: React.FC = () => {
@@ -13,11 +16,17 @@ const Account: React.FC = () => {
   return (
     <Container>
       <Content>
+        <AvatarArea>
           <img 
             src="https://api.adorable.io/avatars/195/abott@adorable.png" 
             alt="avatar"
-            />
-        <h3>{user.name}</h3>
+          />
+          <h3>{user.name}</h3>
+          <MdEdit size={21} />
+        </AvatarArea>
+        <button style={{ border: 'none', backgroundColor: 'transparent' }} >
+          <MdExitToApp size={45} />
+        </button>
       </Content>
     </Container>
   );

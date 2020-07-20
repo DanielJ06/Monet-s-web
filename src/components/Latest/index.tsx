@@ -46,7 +46,7 @@ const Latest: React.FC = () => {
       setTransactions(transactions.data);
     }
     loadLatestTransactions();
-  }, [token, wallet.id]);
+  }, [wallet.id, token]);
 
   function dateParsed(date: string) {
     return formatRelative(parseISO(date), new Date(), {
