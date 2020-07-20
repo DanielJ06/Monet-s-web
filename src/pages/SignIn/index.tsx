@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
+
 import { Formik } from 'formik';
+import { FiLock, FiMail } from 'react-icons/fi';
 
 import { AuthContext } from '../../context/AuthContext';
+import Input from '../../components/Input';
 
 import { 
   Container,
   Content,
   AnimationContainer,
-  Input,
   Button,
   Background,
 } from './styles';
@@ -32,6 +34,7 @@ const SignIn: React.FC = () => {
                   placeholder="E-mail"
                   type="email"
                   name="email"
+                  icon={FiMail}
                   value={props.values.email}
                   onChange={props.handleChange('email')}
                 />
@@ -39,6 +42,7 @@ const SignIn: React.FC = () => {
                   placeholder="Senha"
                   type="password"
                   name="password"
+                  icon={FiLock}
                   value={props.values.password}
                   onChange={props.handleChange('password')}
                 />

@@ -52,22 +52,6 @@ export const AnimationContainer = styled.div`
   }
 `;
 
-export const Input = styled.input`
-  display: flex;
-  
-  background: #E0E5EB;
-  color: #4D4646;
-  
-  margin-top: 8px;
-  padding: 16px;
-  
-  width: 100%;
-  align-items: center;
-  
-  border: none;
-  border-radius: 10px;
-`;
-
 export const Button = styled.button`
   background: #2968E9;
   color: #fff;
@@ -85,6 +69,10 @@ export const Button = styled.button`
   font-size: 21px;
 
   transition: background-color 0.3s;
+
+  :hover {
+    background: #31559E;
+  }
 `;
 
 export const Background = styled.div`
