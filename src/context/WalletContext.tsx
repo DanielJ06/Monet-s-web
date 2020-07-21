@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useState, useEffect, useContext, useCallback } from 'react';
 
 import api from '../services/api';
 import { AuthContext } from './AuthContext';
@@ -12,6 +12,7 @@ interface Wallet {
 
 interface WalletContextData {
   wallet: Wallet;
+  handleChangeWallet(id: number): Promise<void>;
 }
 
 
@@ -34,8 +35,16 @@ export const WalletProvider: React.FC = ({ children }) => {
     console.log('o')
   }, [token]);
   
+  const handleChangeWallet = useCallback(async (id: number) => {
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+    };
+    const response = await api.get(`/wallet/${id}`, config)
+    setData(response.data);
+  }, [token]);
+
   return (
-    <WalletContext.Provider value={{ wallet: data }}>
+    <WalletContext.Provider value={{ wallet: data, handleChangeWallet }}>
       {children}
     </WalletContext.Provider>
   );

@@ -1,0 +1,24 @@
+[33me0aacff[37m (HEAD -> master) | [36mdanieljesus - [37madd react-responsive-modal - [32m52 minutes ago
+[33m35fa78a[37m (origin/master) | [36mdanieljesus - [37mDashboard animation - [32m8 hours ago
+[33m9538548[37m | [36mdanieljesus - [37mImproving UX on SignIn page - [32m9 hours ago
+[33mfbf2f0d[37m | [36mdanieljesus - [37mImproving UX in the summary session - [32m9 hours ago
+[33m0e15e99[37m | [36mdanieljesus - [37mlogout function - [32m10 hours ago
+[33m9d4d0d1[37m | [36mdanieljesus - [37mAccount section styles - [32m10 hours ago
+[33mf6a92bd[37m | [36mdanieljesus - [37mgrid layout refactor - [32m23 hours ago
+[33me2cbed1[37m | [36mdanieljesus - [37mAccount section - [32m24 hours ago
+[33me571db6[37m | [36mdanieljesus - [37mFix icon position - [32m25 hours ago
+[33mbdd59b0[37m | [36mdanieljesus - [37mRemove localeString format - [32m31 hours ago
+[33m62bafd0[37m | [36mdanieljesus - [37mrefactoring latest section - [32m31 hours ago
+[33ma14f518[37m | [36mdanieljesus - [37mWallet summary - [32m32 hours ago
+[33m79f808b[37m | [36mdanieljesus - [37mWallet Context - [32m32 hours ago
+[33mf2349e6[37m | [36mdanieljesus - [37mloggin user - [32m33 hours ago
+[33ma286310[37m | [36mdanieljesus - [37mSetup login with formik - [32m2 days ago
+[33m7133c58[37m | [36mdanieljesus - [37mAuthentication context - [32m2 days ago
+[33m35c1453[37m | [36mdanieljesus - [37mSignIn Page layout - [32m2 days ago
+[33ma61ae1d[37m | [36mdanieljesus - [37mRemove trash icon - [32m2 days ago
+[33mfa0a98b[37m | [36mdanieljesus - [37mApi config - List latest transactions(temporary) - Formating number - Date-fns for transaction dates - [32m5 days ago
+[33mcfb73e0[37m | [36mdanieljesus - [37mSummary buttons - [32m7 days ago
+[33m6459784[37m | [36mdanieljesus - [37mLayout changes, fix grid - [32m7 days ago
+[33m5ac625d[37m | [36mdanieljesus - [37mBalance section - [32m7 days ago
+[33ma4f15c9[37m | [36mdanieljesus - [37mFirst commit - Latest section - [32m7 days ago
+[33m8907ec5[37m | [36mdanieljesus - [37mInitialize project using Create React App - [32m7 days ago

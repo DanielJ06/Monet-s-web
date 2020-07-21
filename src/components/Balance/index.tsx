@@ -35,7 +35,7 @@ const Balance: React.FC = () => {
         <ContentContainer>
           <TotalBox>
             <MoneyType>R$</MoneyType>
-            <TotalValue>{wallet.total}</TotalValue>
+            <TotalValue>{parseFloat(String(wallet.total)).toFixed(2)}</TotalValue>
           </TotalBox>
           <WalletButton onClick={handleOpenModal}>
             <MdAccountBalanceWallet style={{ marginRight: 10 }} size={55} color="#fff" />
