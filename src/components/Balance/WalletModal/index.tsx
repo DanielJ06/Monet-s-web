@@ -57,7 +57,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ isModalOpen, handleCloseModal
         </Header>
 
         {wallets.map((wallet) => (
-          <WalletBtn onClick={() => handleChangeWalletAndCloseModal(wallet.id)}>
+          <WalletBtn key={wallet.id} onClick={() => handleChangeWalletAndCloseModal(wallet.id)}>
             <div>
               <WalletTitle>{wallet.title}</WalletTitle>
               <WalletDesc>{wallet.description}</WalletDesc>

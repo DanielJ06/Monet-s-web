@@ -32,7 +32,6 @@ export const WalletProvider: React.FC = ({ children }) => {
     }
 
     firstWallet();
-    console.log('o')
   }, [token]);
   
   const handleChangeWallet = useCallback(async (id: number) => {
