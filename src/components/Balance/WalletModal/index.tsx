@@ -1,9 +1,19 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext, useState, useCallback } from 'react';
 import { Modal } from "react-responsive-modal";
+import { MdAccountBalanceWallet } from 'react-icons/md';
 
 import { AuthContext } from '../../../context/AuthContext';
 import { WalletContext } from '../../../context/WalletContext';
 import api from '../../../services/api';
+
+import { 
+  Container, 
+  WalletBtn, 
+  Header,
+  WalletTitle,
+  WalletDesc,
+  WalletTotal,
+} from './styles';
 
 interface WalletModalProps {
   isModalOpen: boolean;
@@ -33,11 +43,29 @@ const WalletModal: React.FC<WalletModalProps> = ({ isModalOpen, handleCloseModal
     loadWallets()
   }, [token]);
 
+  const handleChangeWalletAndCloseModal = useCallback((id: number) => {
+    handleChangeWallet(id);
+    handleCloseModal();
+  }, [handleChangeWallet, handleCloseModal]);
+
   return (
     <Modal open={isModalOpen} onClose={handleCloseModal}>
-      {wallets.map((wallet) => (
-        <button onClick={() => handleChangeWallet(wallet.id)} >{wallet.title}</button>
-      ))}
+      <Container>
+        <Header>
+          <MdAccountBalanceWallet style={{ marginRight: 5 }} size={21} />
+          <h3>Your Wallets</h3>
+        </Header>
+
+        {wallets.map((wallet) => (
+          <WalletBtn onClick={() => handleChangeWalletAndCloseModal(wallet.id)}>
+            <div>
+              <WalletTitle>{wallet.title}</WalletTitle>
+              <WalletDesc>{wallet.description}</WalletDesc>
+            </div>
+            <WalletTotal>R$ {wallet.total}</WalletTotal>
+          </WalletBtn>
+        ))}
+      </Container>
     </Modal>
   );
 }
