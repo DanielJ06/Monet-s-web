@@ -62,7 +62,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ isModalOpen, handleCloseModal
               <WalletTitle>{wallet.title}</WalletTitle>
               <WalletDesc>{wallet.description}</WalletDesc>
             </div>
-            <WalletTotal>R$ {wallet.total}</WalletTotal>
+            <WalletTotal>R$ {parseFloat(String(wallet.total)).toFixed(2)}</WalletTotal>
           </WalletBtn>
         ))}
       </Container>
