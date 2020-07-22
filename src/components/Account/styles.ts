@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 
   padding: 32px;
-  border-radius: 32px;
+  border-radius: 8px;
 `;
 
 export const Content = styled.div`
