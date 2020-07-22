@@ -5,6 +5,7 @@ import { FiLock, FiMail } from 'react-icons/fi';
 
 import { AuthContext } from '../../context/AuthContext';
 import Input from '../../components/Input';
+import Logo from '../../assets/logo.png';
 
 import { 
   Container,
@@ -21,6 +22,7 @@ const SignIn: React.FC = () => {
     <Container>
       <Content>
         <AnimationContainer>
+          <img src={Logo} alt="Monet's"/>
           <Formik
             initialValues={{ email: '', password: '' }}
             onSubmit={(values) => {
