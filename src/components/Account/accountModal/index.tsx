@@ -20,7 +20,20 @@ interface UserModalProps {
 }
 
 const AccountModal: React.FC<UserModalProps> = ({ isModalOpen, handleCloseModal }) => {
+<<<<<<< HEAD
   const { user, updateUser } = useContext(AuthContext); 
+=======
+<<<<<<< HEAD
+  const { user } = useContext(AuthContext);
+=======
+  const { user, token } = useContext(AuthContext);
+>>>>>>> 513a717d8197bfd65550db125efaa8ee992835f4
+
+  const handleUpdateUserAndCloseModal = useCallback((id: number) => {
+    //handleUpdateUser(id);
+    handleCloseModal();
+  }, [handleCloseModal]);
+>>>>>>> 45b0b792b99f7a252f981ee7dddb5e0f5cc4ec33
 
   return (
     <Modal open={isModalOpen} onClose={handleCloseModal}>
