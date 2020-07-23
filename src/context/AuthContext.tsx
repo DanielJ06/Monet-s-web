@@ -7,6 +7,13 @@ interface Credentials {
   password: string;
 }
 
+interface UpdateCredentials {
+  name: string;
+  email: string;
+  oldPassword: string;
+  password: string;
+}
+
 interface User {
   id: number;
   name: string;
@@ -17,6 +24,7 @@ interface AuthContextData {
   user: User;
   token: string;
   signIn(credentials: Credentials): Promise<void>;
+  updateUser(ChangedParams: UpdateCredentials): Promise<void>;
   logout(): void;
 }
 
@@ -60,8 +68,25 @@ export const AuthProvider: React.FC = ({ children }) => {
     setData({} as AuthData);
   }, [])
 
+  const updateUser = useCallback(async ({ name, email, oldPassword, password }) => {
+    const config = {
+      headers: { Authorization: `Bearer ${data.token}` }
+    };
+    
+    await api.put('/users', {
+      name,
+      email,
+      oldPassword,
+      password
+    }, config)
+
+    localStorage.removeItem('@Monets:token');
+    localStorage.removeItem('@Monets:user');
+
+  }, [data.token]);
+
   return (
-    <AuthContext.Provider value={{ user: data.user, token: data.token, signIn, logout }}>
+    <AuthContext.Provider value={{ user: data.user, token: data.token, signIn, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );
