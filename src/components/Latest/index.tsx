@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 
-import { MdAttachMoney, MdMoneyOff, MdEvent } from 'react-icons/md';
+import { MdAttachMoney, MdMoneyOff, MdEvent, MdAdd } from 'react-icons/md';
 import {parseISO, formatRelative} from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
 
 import { AuthContext } from '../../context/AuthContext';
 import { WalletContext } from '../../context/WalletContext';
+import AddModal from './addTransactionModal';
 
 import api from '../../services/api';
 
@@ -37,6 +38,7 @@ const Latest: React.FC = () => {
   const { token } = useContext(AuthContext);
   const { wallet } = useContext(WalletContext);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     async function loadLatestTransactions() {
@@ -53,6 +55,14 @@ const Latest: React.FC = () => {
     loadLatestTransactions()
   }, [token, wallet.id]);
 
+  const handleOpenModal = useCallback(() => {
+    setIsModalOpen(true);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
   function dateParsed(date: string) {
     return formatRelative(parseISO(date), new Date(), {
       locale: pt,
@@ -62,7 +72,12 @@ const Latest: React.FC = () => {
   return (
     <Container>
       <Header>
-        <SectionTitle>Latest</SectionTitle>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
+          <SectionTitle>Latest</SectionTitle>
+          <button onClick={handleOpenModal} style={{ border: 'none', backgroundColor: 'transparent' }} >
+            <MdAdd size={38} color="#4D4646" style={{ marginLeft: 8 }} />
+          </button>
+        </div>
         <SeeMore>See more</SeeMore>
       </Header>
       <ContentContainer>
@@ -97,6 +112,10 @@ const Latest: React.FC = () => {
         <></>
       )}
       </ContentContainer>
+      <AddModal 
+        isModalOpen={isModalOpen}
+        handleCloseModal={handleCloseModal}
+      />
     </Container>
   );
 }
