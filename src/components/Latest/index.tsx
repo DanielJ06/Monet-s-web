@@ -13,6 +13,7 @@ import {
   Container,
   Header,
   SeeMore,
+  ContentContainer,
   SectionTitle,
   TransactionContainer,
   BoxContainer,
@@ -39,14 +40,18 @@ const Latest: React.FC = () => {
 
   useEffect(() => {
     async function loadLatestTransactions() {
-      const config = {
-        headers: { Authorization: `Bearer ${token}` }
-      };
-      const transactions = await api.get(`/transaction/latest?walletId=${wallet.id}`, config)
-      setTransactions(transactions.data);
+      try {
+        const config = {
+          headers: { Authorization: `Bearer ${token}` }
+        };
+        const transactions = await api.get(`/transaction/latest?walletId=${wallet.id}`, config)
+        setTransactions(transactions.data);
+      } catch (err) {
+        console.error(err)
+      }
     }
-    loadLatestTransactions();
-  }, [wallet.id, token]);
+    loadLatestTransactions()
+  }, [token, wallet.id]);
 
   function dateParsed(date: string) {
     return formatRelative(parseISO(date), new Date(), {
@@ -60,7 +65,8 @@ const Latest: React.FC = () => {
         <SectionTitle>Latest</SectionTitle>
         <SeeMore>See more</SeeMore>
       </Header>
-      {transactions.map(transaction => (
+      <ContentContainer>
+      { transactions ? transactions.map(transaction => (
         <TransactionContainer key={transaction.id} >
           <BoxContainer>
             <Type transactionType={transaction.type}>
@@ -87,7 +93,10 @@ const Latest: React.FC = () => {
             </TransactionValue>
           </BoxContainer>
         </TransactionContainer>
-      ))}
+      )) : (
+        <></>
+      )}
+      </ContentContainer>
     </Container>
   );
 }

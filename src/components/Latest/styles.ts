@@ -11,32 +11,6 @@ export const Container = styled.div`
 
   padding: 25px;
   border-radius: 8px;
-
-  overflow:auto;
-  
-    ::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    height: 6px;
-    border: 4px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    -webkit-border-radius: 7px;
-    background-color: rgba(0, 0, 0, .5);
-    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
-  }
-
-  ::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
-    display: none;
-  }
-
-  ::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
 `;
 
 export const Header = styled.div`
@@ -45,6 +19,35 @@ export const Header = styled.div`
 
   align-items: center;
   justify-content: space-between;
+`;
+
+export const ContentContainer = styled.div`
+  overflow:auto;
+  height: 575px;
+  
+  ::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  -webkit-border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 `;
 
 export const SeeMore = styled.h3`
@@ -75,7 +78,7 @@ export const TransactionContainer = styled.div`
   transition: box-shadow 1s ease;  
 
   :hover {
-    box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   }
 `;
 

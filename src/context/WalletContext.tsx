@@ -27,8 +27,12 @@ export const WalletProvider: React.FC = ({ children }) => {
       const config = {
         headers: { Authorization: `Bearer ${token}` }
       };
-      const walletData = await api.get('/wallet', config)
-      setData(walletData.data[0]);
+      if (token) {
+        const walletData = await api.get('/wallet', config)
+        setData(walletData.data[0]);
+      } else {
+        return
+      }
     }
 
     firstWallet();
